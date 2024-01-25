@@ -1,3 +1,20 @@
+let sizeTimer = null
+const sizeListener = () => {
+    window.clearTimeout(sizeTimer)
+    sizeTimer = window.setTimeout(() => {
+        const img = document.querySelector(".grid-wrapper--technology > img")
+
+        let newPath = img.getAttribute('src')
+
+        if (window.matchMedia('(min-width: 45em)').matches) {
+            newPath = newPath.replace('landscape', 'portrait')
+        } else {
+            newPath = newPath.replace('portrait', 'landscape')
+        }
+
+        img.setAttribute('src', newPath)
+    }, 300)
+}
 
 /**
  * 
@@ -5,7 +22,9 @@
  * @param {Array<Object>} destinations 
  * @param {Array} buttons 
  */
-const listener = (e, destinations, buttons) => {
+const listener = (e, technologies, buttons) => {
+
+    window.removeEventListener('resize', sizeListener)
 
     buttons.forEach(button => {
         if (button === e.currentTarget) {
@@ -15,35 +34,35 @@ const listener = (e, destinations, buttons) => {
         }
     })
 
-    const name = e.currentTarget.innerText[0] + e.currentTarget.innerText.slice(1).toLowerCase()
+    const technology = technologies[parseInt(e.currentTarget.innerText) - 1]
+    
+    const span = document.querySelector('.technology-info > h2 > span')
+    span.innerText = technology.name
 
-    const destination = destinations.filter(d => d.name === name)[0]
+    const p = document.querySelector('.technology-info > p')
+    p.innerText = technology.description
 
-    const h2 = document.querySelector(".destination-info > h2")
-    const p = document.querySelector(".destination-info > p")
+    let path = "assets/technology/image-" + technology.name.replace(' ', '-').toLowerCase()
 
-    const metas = document.querySelectorAll(".destination-meta p")
+    if (window.matchMedia('(min-width: 45em)').matches) {
+        path += "-portrait.jpg"
+    } else {
+        path += "-landscape.jpg"
+    }
 
+    const img = document.querySelector(".grid-wrapper--technology > img")
+    img.style.content = 'initial'
+    img.setAttribute("src", path)
+    img.setAttribute('alt', technology.name)
 
-    h2.innerText = destination.name
-    p.innerText = destination.description
-
-    metas[0].innerText = destination.distance
-    metas[1].innerText = destination.travel
-
-    const img = document.querySelector(".destination-img")
-
-    const path = "./assets/destination/image-" + name.toLowerCase()
-    img.children[0].setAttribute('srcset', path + ".webp")
-    img.children[1].setAttribute('src', path + ".png")
-    img.children[1].setAttribute('alt', destination.name)
+    window.addEventListener('resize', sizeListener)
 }
 
-// fetch('./destination.json')
-//     .then(res => res.json())
-//     .then(destinations => {
-//         const buttons = document.querySelectorAll(".tab-list > button")
+fetch('./technology.json')
+    .then(res => res.json())
+    .then(technologies => {
+        const buttons = document.querySelectorAll(".number-indicators > button")
 
-//         buttons.forEach(b => b.addEventListener("click", (e) => listener(e, destinations, buttons)))
-//     })
+        buttons.forEach(b => b.addEventListener("click", (e) => listener(e, technologies, buttons)))
+    })
 

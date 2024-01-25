@@ -771,7 +771,7 @@ body {
     }
 
     .grid-wrapper--technology > img {
-        content: url(./assets/technology/image-spaceport-portrait.jpg);
+        content: url(./assets/technology/image-launch-vehicle-portrait.jpg);
         justify-self: end;
     }
 
@@ -845,18 +845,20 @@ body {
         '. image content .';
     }
 
+    .technology-info > h2 > span,
+    .technology-info > h2 {
+        max-width: initial;
+    }
+
+    .technology-info > p {
+        max-width: 43ch;
+    }
+
     .grid-wrapper--technology {
-        grid-template-columns: minmax(1rem, 1fr) min-content repeat(2, minmax(0, 40rem))  minmax(1rem, 1fr);
+        grid-template-columns: minmax(clamp(1rem, 5vw, 8rem), 1fr) min-content repeat(2, minmax(0, 40rem)) minmax(1rem, 1fr);
     }
 
-    /* .grid-wrapper--technology > img {
-        height: 100%;
-    } */
-
-    .grid-wrapper--destination > picture {
-        max-width: 90%;
-    }
-    
+    .grid-wrapper--destination > picture,
     .crew-img {
         max-width: 90%;
     }
