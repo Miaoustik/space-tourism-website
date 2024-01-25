@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./assets/favicon-32x32.png"
+        />
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Bellefair&family=Barlow:wght@400;700&display=swap" rel="preload" as="style">
+        <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Bellefair&family=Barlow:wght@400;700&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="index.css" />
+        <script src="./index.js" defer></script>
+        <script src="./crew.js" defer></script>
+        <title>Frontend Mentor | Space tourism website</title>
+    </head>
+    <body class="technology">
+        <a class="skip-to-content" href="#main">Skip to content</a>
+        <header class="primary-header flex">
+            <div>
+                <img
+                    src="./assets/shared/logo.svg"
+                    alt="space tourism logo"
+                    class="logo"
+                />
+            </div>
+            <button
+                class="mobile-nav-toggle"
+                aria-controls="primary-navigation"
+                aria-expanded="false"
+            >
+                <span class="sr-only">Menu</span>
+            </button>
+            <nav>
+                <ul
+                    id="primary-navigation"
+                    class="primary-navigation underline-indicators flex"
+                    data-visible="false"
+                >
+                    <li>
+                        <a
+                            class="ff-sans-cond uppercase text-white letter-spacing-2"
+                            href="index.html"
+                            ><span aria-hidden="true">00</span>Home</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            class="ff-sans-cond uppercase text-white letter-spacing-2"
+                            href="destination.html"
+                            ><span aria-hidden="true">01</span>Destination</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            class="ff-sans-cond uppercase text-white letter-spacing-2"
+                            href="crew.html"
+                            ><span aria-hidden="true">02</span>Crew</a
+                        >
+                    </li>
+                    <li class="active">
+                        <a
+                            class="ff-sans-cond uppercase text-white letter-spacing-2"
+                            href="technology.html"
+                            ><span aria-hidden="true">03</span>Technology</a
+                        >
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main id="main" class="grid-wrapper grid-wrapper--technology">
+            <h1 class="numbered-title">
+                <span aria-hidden="true">03</span> Space launch 101
+            </h1>
+            
+            <img
+                src="./assets/technology/image-spaceport-landscape.jpg"
+                alt="Spaceport"
+            />
+
+            <div class="number-indicators flex" style="--gap: 1em;justify-content: center;">
+                <button class="ff-serif fs-600" aria-selected="true">1</button>
+                <button class="ff-serif fs-600" aria-selected="false">2</button>
+                <button class="ff-serif fs-600" aria-selected="false">3</button>
+            </div>
+
+            <article class="technology-info flow" style="--flow-space: 1rem">
+                <h2 class="fs-300 ff-sans-cond uppercase text-light">
+                    The terminology...<span class="text-white d-block fs-700 ff-serif"
+                        >Spaceport</span
+                    >
+                </h2>
+
+                <p class="text-light">
+                    A spaceport or cosmodrome is a site for launching (or receiving) spacecraft, by analogy to the seaport for ships or airport for aircraft. Based in the famous Cape Canaveral, our spaceport is ideally situated to take advantage of the Earth’s rotation for launch.
+                </p>
+            </article>
+        </main>
+    </body>
+</html>
