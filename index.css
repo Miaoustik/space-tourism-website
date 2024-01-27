@@ -89,9 +89,10 @@ body {
   font-size: var(--fs-400);
   color: hsl(var(--clr-white));
   background-color: hsl(var(--clr-dark));
-
   display: grid;
   grid-template-rows: min-content 1fr;
+
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* Make images easier to work with */
@@ -119,6 +120,15 @@ select {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* Make focus visible only on keyboard */
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 3px solid white;
 }
 
 /* -------------------- */
@@ -713,9 +723,7 @@ body {
   max-width: 50%;
 }
 
-
 @media (min-width: 35em) {
-
   .crew-img {
     max-width: 70%;
   }
@@ -758,7 +766,6 @@ body {
   }
 
   .crew-img {
-    
     justify-self: center;
     align-self: end;
   }
