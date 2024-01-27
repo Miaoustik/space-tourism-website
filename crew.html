@@ -1,121 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="./assets/favicon-32x32.png"
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Bellefair&family=Barlow:wght@400;700&display=swap"
+      rel="preload"
+      as="style"
+      crossorigin
+    />
+    <link
+      href="https://fonts.gstatic.com/s/barlow/v12/7cHpv4kjgoGqM7E_DMs5.woff2"
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <link
+      href="https://fonts.gstatic.com/s/barlow/v12/7cHqv4kjgoGqM7E3t-4s51os.woff2"
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <link
+      href="https://fonts.gstatic.com/s/barlowcondensed/v12/HTx3L3I-JCGChYJ8VI-L6OO_au7B6xHT2g.woff2"
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <link
+      href="https://fonts.gstatic.com/s/barlowcondensed/v12/HTxwL3I-JCGChYJ8VI-L6OO_au7B46r2z3bWuQ.woff2"
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <link
+      href="https://fonts.gstatic.com/s/bellefair/v14/kJExBuYY6AAuhiXUxG1N-Po3.woff2"
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Bellefair&family=Barlow:wght@400;700&display=swap"
+      rel="stylesheet"
+      crossorigin
+    />
+
+    <link rel="stylesheet" href="index.css" />
+    <script src="./js/index.js" defer></script>
+    <script src="./js/crew.js" defer></script>
+    <script src="./js/tabs.js" defer></script>
+    <title>Frontend Mentor | Space tourism website</title>
+  </head>
+  <body class="crew">
+    <a class="skip-to-content" href="#main">Skip to content</a>
+    <header class="primary-header flex">
+      <div>
+        <img
+          src="./assets/shared/logo.svg"
+          alt="space tourism logo"
+          class="logo"
         />
-
-        <!-- Google Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Bellefair&family=Barlow:wght@400;700&display=swap" rel="preload" as="style">
-        <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Bellefair&family=Barlow:wght@400;700&display=swap" rel="stylesheet">
-
-        <link rel="stylesheet" href="index.css" />
-        <script src="./index.js" defer></script>
-        <script src="./crew.js" defer></script>
-        <title>Frontend Mentor | Space tourism website</title>
-    </head>
-    <body class="crew">
-        <a class="skip-to-content" href="#main">Skip to content</a>
-        <header class="primary-header flex">
-            <div>
-                <img
-                    src="./assets/shared/logo.svg"
-                    alt="space tourism logo"
-                    class="logo"
-                />
-            </div>
-            <button
-                class="mobile-nav-toggle"
-                aria-controls="primary-navigation"
-                aria-expanded="false"
+      </div>
+      <button
+        class="mobile-nav-toggle"
+        aria-controls="primary-navigation"
+        aria-expanded="false"
+      >
+        <span class="sr-only">Menu</span>
+      </button>
+      <nav>
+        <ul
+          id="primary-navigation"
+          class="primary-navigation underline-indicators flex"
+          data-visible="false"
+        >
+          <li>
+            <a
+              class="ff-sans-cond uppercase text-white letter-spacing-2"
+              href="index.html"
+              ><span aria-hidden="true">00</span>Home</a
             >
-                <span class="sr-only">Menu</span>
-            </button>
-            <nav>
-                <ul
-                    id="primary-navigation"
-                    class="primary-navigation underline-indicators flex"
-                    data-visible="false"
-                >
-                    <li>
-                        <a
-                            class="ff-sans-cond uppercase text-white letter-spacing-2"
-                            href="index.html"
-                            ><span aria-hidden="true">00</span>Home</a
-                        >
-                    </li>
-                    <li>
-                        <a
-                            class="ff-sans-cond uppercase text-white letter-spacing-2"
-                            href="destination.html"
-                            ><span aria-hidden="true">01</span>Destination</a
-                        >
-                    </li>
-                    <li class="active">
-                        <a
-                            class="ff-sans-cond uppercase text-white letter-spacing-2"
-                            href="crew.html"
-                            ><span aria-hidden="true">02</span>Crew</a
-                        >
-                    </li>
-                    <li>
-                        <a
-                            class="ff-sans-cond uppercase text-white letter-spacing-2"
-                            href="technology.html"
-                            ><span aria-hidden="true">03</span>Technology</a
-                        >
-                    </li>
-                </ul>
-            </nav>
-        </header>
-        <main id="main" class="grid-wrapper grid-wrapper--crew">
-            <h1 class="numbered-title">
-                <span aria-hidden="true">02</span> Meet your crew
-            </h1>
+          </li>
+          <li>
+            <a
+              class="ff-sans-cond uppercase text-white letter-spacing-2"
+              href="destination.html"
+              ><span aria-hidden="true">01</span>Destination</a
+            >
+          </li>
+          <li class="active">
+            <a
+              aria-current="page"
+              class="ff-sans-cond uppercase text-white letter-spacing-2"
+              href="crew.html"
+              ><span aria-hidden="true">02</span>Crew</a
+            >
+          </li>
+          <li>
+            <a
+              class="ff-sans-cond uppercase text-white letter-spacing-2"
+              href="technology.html"
+              ><span aria-hidden="true">03</span>Technology</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main id="main" class="grid-wrapper grid-wrapper--crew">
+      <h1 class="numbered-title">
+        <span aria-hidden="true">02</span> Meet your crew
+      </h1>
 
-            <article class="crew-info flow" style="--flow-space: 3rem">
-                <h2 class="fs-600 ff-serif uppercase">
-                    Commander<span class="text-white d-block fs-700"
-                        >Douglas Hurley</span
-                    >
-                </h2>
+      <article
+        role="tabpanel"
+        aria-labelledby="#tab-1"
+        class="crew-info flow"
+        style="--flow-space: 3rem"
+        id="crewPanel"
+      >
+        <h2 class="fs-600 ff-serif uppercase">
+          Commander<span class="text-white d-block fs-700">Douglas Hurley</span>
+        </h2>
 
-                <p class="text-light">
-                    Douglas Gerald Hurley is an American engineer, former Marine
-                    Corps pilot and former NASA astronaut. He launched into
-                    space for the third time as commander of Crew Dragon Demo-2.
-                </p>
-            </article>
+        <p class="text-light">
+          Douglas Gerald Hurley is an American engineer, former Marine Corps
+          pilot and former NASA astronaut. He launched into space for the third
+          time as commander of Crew Dragon Demo-2.
+        </p>
+      </article>
 
-            <div class="dot-indicators flex" style="--gap: 1rem">
-                <button aria-selected="true">
-                    <span class="sr-only">Commander</span>
-                </button>
-                <button aria-selected="false">
-                    <span class="sr-only">Mission Specialist</span>
-                </button>
-                <button aria-selected="false">
-                    <span class="sr-only">Pilot</span>
-                </button>
-                <button aria-selected="false">
-                    <span class="sr-only">Flight Engineer</span>
-                </button>
-            </div>
-            <picture class="crew-img">
-                <source srcset="./assets/crew/image-douglas-hurley.webp" type="image/webp">
-                <img
-                    src="./assets/crew/image-douglas-hurley.png"
-                    alt="Douglas Hurley"
-                />
-            </picture>
-        </main>
-    </body>
+      <div
+        role="tablist"
+        class="dot-indicators flex"
+        style="--gap: 1rem"
+        aria-label="Crew member list"
+      >
+        <button
+          id="tab-1"
+          role="tab"
+          tabindex="0"
+          aria-selected="true"
+          aria-controls="#crewPanel"
+        >
+          <span class="sr-only">Commander</span>
+        </button>
+        <button
+          id="tab-2"
+          role="tab"
+          tabindex="-1"
+          aria-selected="false"
+          aria-controls="#crewPanel"
+        >
+          <span class="sr-only">Mission Specialist</span>
+        </button>
+        <button
+          id="tab-3"
+          role="tab"
+          tabindex="-1"
+          aria-selected="false"
+          aria-controls="#crewPanel"
+        >
+          <span class="sr-only">Pilot</span>
+        </button>
+        <button
+          id="tab-4"
+          role="tab"
+          tabindex="-1"
+          aria-selected="false"
+          aria-controls="#crewPanel"
+        >
+          <span class="sr-only">Flight Engineer</span>
+        </button>
+      </div>
+      <picture class="crew-img">
+        <source
+          srcset="./assets/crew/image-douglas-hurley.webp"
+          type="image/webp"
+        />
+        <img
+          src="./assets/crew/image-douglas-hurley.png"
+          alt="Douglas Hurley"
+        />
+      </picture>
+    </main>
+  </body>
 </html>
