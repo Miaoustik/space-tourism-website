@@ -777,7 +777,7 @@ body {
   row-gap: 1rem;
 }
 
-.grid-wrapper--technology > img {
+.grid-wrapper--technology > picture {
   grid-area: image;
 }
 
@@ -840,13 +840,8 @@ body {
     padding-block: 2rem;
   }
 
-  .grid-wrapper--technology > img {
-    --src1: url(./assets/technology/image-launch-vehicle-portrait.jpg);
-    --src2: url(./assets/technology/image-spaceport-portrait.jpg);
-    --src3: url(./assets/technology/image-space-capsule-portrait.jpg);
-
+  .grid-wrapper--technology > picture {
     justify-self: end;
-    content: var(--src);
   }
 
   .technology-info {

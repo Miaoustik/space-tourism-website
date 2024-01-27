@@ -1,38 +1,42 @@
 /**
- * 
- * @param {Event} e 
- * @param {Array<Object>} destinations 
- * @param {Array} buttons 
+ *
+ * @param {Event} e
+ * @param {Array<Object>} destinations
+ * @param {Array} buttons
  */
 const listener = (e, technologies) => {
+  const key = parseInt(e.currentTarget.innerText) - 1;
+  const technology = technologies[key];
 
-    const key = parseInt(e.currentTarget.innerText) - 1
-    const technology = technologies[key]
-    
-    const article = document.querySelector('.technology-info')
-    article.setAttribute('aria-labelledby', `#tab-${key + 1}`)
+  const article = document.querySelector(".technology-info");
+  article.setAttribute("aria-labelledby", `#tab-${key + 1}`);
 
-    const span = article.querySelector(' h2 > span')
-    span.innerText = technology.name
+  const span = article.querySelector(" h2 > span");
+  span.innerText = technology.name;
 
-    const p = article.querySelector('p')
-    p.innerText = technology.description
+  const p = article.querySelector("p");
+  p.innerText = technology.description;
 
-    let path = "assets/technology/image-" + technology.name.replace(' ', '-').toLowerCase()
+  let path =
+    "assets/technology/image-" +
+    technology.name.replace(" ", "-").toLowerCase();
 
-    const img = document.querySelector(".grid-wrapper--technology > img")
-    img.setAttribute("src", path + "-landscape.jpg")
-    
-    img.style.setProperty('--src', `var(--src${key + 1})`)
+  const picture = document.querySelector(".grid-wrapper--technology > picture");
 
-    img.setAttribute('alt', technology.name)
-}
+  const source = picture.children[0];
+  const img = picture.children[1];
 
-fetch('./data/technology.json')
-    .then(res => res.json())
-    .then(technologies => {
-        const buttons = document.querySelectorAll(".number-indicators > button")
+  source.setAttribute("srcset", path + "-portrait.jpg");
+  img.setAttribute("src", path + "-landscape.jpg");
+  img.setAttribute("alt", technology.name);
+};
 
-        buttons.forEach(b => b.addEventListener("click", (e) => listener(e, technologies)))
-    })
+fetch("./data/technology.json")
+  .then((res) => res.json())
+  .then((technologies) => {
+    const buttons = document.querySelectorAll(".number-indicators > button");
 
+    buttons.forEach((b) =>
+      b.addEventListener("click", (e) => listener(e, technologies))
+    );
+  });
